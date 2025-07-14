@@ -1,0 +1,8 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["node_modules", "lib"]
+dotenv = ".env"
+optimizer = true
+optimizer_runs = 200
+via_ir = true

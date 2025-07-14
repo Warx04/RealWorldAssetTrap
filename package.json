@@ -1,0 +1,7 @@
+{
+  "name": "RealWorldAssetTrap",
+  "dependencies": {
+    "forge-std": "github:foundry-rs/forge-std",
+    "contracts": "https://github.com/drosera-network/contracts"
+  }
+}

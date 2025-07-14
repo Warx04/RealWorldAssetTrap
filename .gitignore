@@ -1,0 +1,23 @@
+# === Compiler and build outputs ===
+out/
+cache/
+broadcast/
+lib/
+scripts/
+node_modules/
+
+# === Dotenv ===
+.env
+.envrc
+example.env
+
+# === Docs ===
+docs/
+
+# === Bun ===
+bun.lock
+
+# === Ignore DS_Store and editor swap files ===
+.DS_Store
+*.swp
+*.swo

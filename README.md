@@ -1,5 +1,9 @@
 # 🏠 Real World Asset NFT Minting Trap
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Testnet Deployed](https://img.shields.io/badge/Testnet-Hoodi-blue)](https://hoodi.etherscan.io)
+
+
 A fully on-chain automation system for minting NFTs that represent real-world assets (RWA) using Drosera Traps. This project allows users to register and tokenize their physical assets by submitting IPFS-based metadata and letting the trap validate and mint NFTs autonomously.
 
 ## ⚙️ How It Works

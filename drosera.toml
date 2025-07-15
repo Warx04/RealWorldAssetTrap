@@ -6,15 +6,15 @@ drosera_address = "0x91cB447BaFc6e0EA0F4Fe056F5a9b1F14bb06e5D"
 
 [traps.RWAtrap]
 path = "out/Trap.sol/Trap.json"
-response_contract = "YourDeployContract" // change your deploy contract from forge script
+response_contract = "0xd22EaE6A80719D474659737c5C0F3eeB48Eb4517" # change your deploy contract from forge script
 response_function = "mintRWA(string,string,string,string,string,uint256)"
 cooldown_period_blocks = 33
 min_number_of_operators = 1
 max_number_of_operators = 2
 block_sample_size = 1
 private_trap = true
-whitelist = []
-address = 
+whitelist = ["0x10677D61271335EA36aa17BA6d76E0be7D7c71D3"]
+address = "0x3242C59db460E91463e4C08908E097de90b02fDA"
 
 
 

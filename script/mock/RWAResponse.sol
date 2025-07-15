@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract RWAResponse is ERC721URIStorage, Ownable {
     address public drosera;
+    address public trustedTrap; // ✅ Trap yang diizinkan memanggil mintRWA()
     uint256 public nextTokenId;
 
     mapping(address => string) public pendingSubmissions;
@@ -22,6 +23,11 @@ contract RWAResponse is ERC721URIStorage, Ownable {
 
     constructor(address _drosera) ERC721("RealWorldAssetNFT", "RWANFT") Ownable(msg.sender) {
         drosera = _drosera;
+    }
+
+    // ✅ Diset sekali oleh owner setelah Trap dideploy
+    function setTrap(address _trap) external onlyOwner {
+        trustedTrap = _trap;
     }
 
     function submitAssetMetadata(string calldata metadataURI) external {
@@ -44,9 +50,9 @@ contract RWAResponse is ERC721URIStorage, Ownable {
         string calldata legalStatus,
         uint256 marketValue
     ) external {
-        require(msg.sender == drosera, "Only drosera trap can call");
+        require(msg.sender == trustedTrap, "Only trap can call");
 
-        address owner = tx.origin;
+        address owner = tx.origin; // User yang submit metadata
         uint256 tokenId = nextTokenId++;
         _mint(owner, tokenId);
         _setTokenURI(tokenId, metadataURI);
@@ -62,7 +68,6 @@ contract RWAResponse is ERC721URIStorage, Ownable {
         delete pendingSubmissions[owner];
     }
 
-    // ✅ Manual mint (debugging or admin use only)
     function adminMint(
         address to,
         string calldata metadataURI,

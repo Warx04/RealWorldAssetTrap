@@ -17,7 +17,7 @@ interface IRWAResponse {
 }
 
 contract Trap is ITrap {
-    address public constant RESPONSE_CONTRACT = 0xEA78d8ED80CeDa41e94425AA426AC309fe0744Ea;
+    address public constant RESPONSE_CONTRACT = 0xd22EaE6A80719D474659737c5C0F3eeB48Eb4517;
 
     function collect() external view returns (bytes memory) {
         address user = msg.sender;

@@ -24,11 +24,11 @@ contract Trap is ITrap {
         bool has = IRWAResponse(RESPONSE_CONTRACT).hasPending(user);
         string memory metadata = IRWAResponse(RESPONSE_CONTRACT).getPendingMetadata(user);
 
-        string memory assetName = "Koenigsegg Jesko Absolut";
-        string memory location = "Stockholm, Sweden";
-        string memory assetType = "Vehicle";
-        string memory legalStatus = "Private Ownership";
-        uint256 marketValue = 3_000_000 ether;
+        string memory assetName = "YourRwaName"; // change what you want
+        string memory location = "YourRWALocation"; // change what you want
+        string memory assetType = "TypeRWA"; // change what you want
+        string memory legalStatus = "RWALegalStatus"; // change what you want
+        uint256 marketValue =  Price; // change what you want
 
         return abi.encode(user, has, metadata, assetName, location, assetType, legalStatus, marketValue);
     }
@@ -48,12 +48,12 @@ contract Trap is ITrap {
         // ✅ Always return true to allow Drosera to trigger (even if dummy)
         if (!hasPending || bytes(metadataURI).length == 0) {
             return (true, abi.encode(
-                "ipfs://Qmf8RKLzdqb9MUBFrL7n6w23n88AYfkeYzAHQXi6J9NJsc",
-                "Koenigsegg Jesko Absolut",
-                "Stockholm, Sweden",
-                "Vehicle",
-                "Private Ownership",
-                3_000_000 ether
+                "ipfs://Qmf..............",
+                "YourRwaName", // same on top
+                "YourRWALocation", // same on top
+                "TypeRWA", // same on top
+                "RWALegalStatus", // same on top
+                Price // same on top
             ));
         }
 
